@@ -1,0 +1,76 @@
+```{r}
+#install.packages("magrittr") 
+#install.packages("estimatr")
+#install.packages("stargazer")
+#install.packages("dplyr")
+#install.packages("lmtest")
+#install.packages("sandwich")
+#install.packages("forestplot")
+library(magrittr)
+library(estimatr)
+library(stargazer)
+library(dplyr)
+library(lmtest)
+library(sandwich)
+library(forestplot)
+
+setwd=("C:/Users/ong92/Documents/GitHub/ECO 590/assignment-three-update-sampText")
+
+```
+
+## #1 Importing My Data
+```{r}
+league=read.csv("C:/Users/ong92/Documents/GitHub/ECO 590/assignment-three-update-sampText/league.csv")
+league$games=gsub(",", "", league$games)
+league$games=as.numeric(league$games)
+# turns into a number so it can be used as control.
+
+#challe=league[league$rank=="CHALLENGER",]
+```
+
+## #2 Basic Regression
+```{r}
+ols1=lm(wr~PBIno+games,data=league)
+summary(ols1)
+```
+
+## #3 Filtered Regression
+```{r}
+ols2=lm(wr~rank*PBIno+games,data=league %>% filter(!(grepl("top lane", lane))))
+summary(ols2)
+```
+
+## #4 Preferred Regression
+```{r}
+ols3=lm(wr~rank*PBIno+games,data=league)
+summary(ols3)
+```
+
+## #5 Reporting Results
+```{r}
+bptest(ols1)
+bptest(ols2)
+bptest(ols3)
+#fails the test, heteroscedasticity is present
+
+rob_se=list(
+  sqrt(diag(vcovHC(ols1,type="HC1"))),
+  sqrt(diag(vcovHC(ols2,type="HC1"))),
+  sqrt(diag(vcovHC(ols3,type="HC1")))
+  )
+#Ahmad helped me with this to calculate robust standard errors
+
+stargazer(ols1, ols3, ols2,
+          se=rob_se,
+          type = "html",  
+          title = "The Effect of PBI on Win Rate Across Ranks", 
+          dep.var.labels = "Win Rate", 
+          column.labels = c("OLS", "Across Every Role", "Top Lane Only"),
+          model.names = FALSE,
+          out="league.html"
+          )
+```
+
+## #6 Discussion
+
+The regressions all show the effect of character preference over winrate across different ranks. I used interaction terms across each rank and my preferred regression controls for the number of games played by each character as well as using robust standard errors. What it shows is that the strongest effect of PBI on winrate shows itself in the diamond rank which falls above the average skill, but is not quite what are considered the "apex ranks." The effect tapers off as ranks go past diamond and are much lower the lower rank you are. What this means is that the middle of the road ranked players who are not quite at the highest ranks are the ones who need to play the most "meta-favored" in order to achieve wins. The higher ranks do care, but not as much. The lower ranks (especially Iron and Bronze) simply do not care at all.
