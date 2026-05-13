@@ -543,7 +543,7 @@ stargazer(ols1, ols3, ols2,
           column.labels = c(&quot;OLS&quot;, &quot;Across Every Lane&quot;, &quot;Top Lane Only&quot;),
           model.names = FALSE,
           dep.var.caption = &quot;&quot;,
-          covariate.labels = c(&quot;Challenger WR&quot;, &quot;Diamond WR&quot;, &quot;Emerald WR&quot;, &quot;Grandmaster WR&quot;, &quot;Gold WR&quot;, &quot;Iron WR&quot;, &quot;Master WR&quot;, &quot;Platinum WR&quot;, &quot;Silver WR&quot;, &quot;PBI&quot;, &quot;# of Games&quot;, &quot;PBI in Challenger&quot;, &quot;PBI in Diamond&quot;, &quot;PBI in Emerald&quot;, &quot;PBI in Grandmaster&quot;, &quot;PBI in Gold&quot;, &quot;PBI in Iron&quot;, &quot;PBI in Master&quot;, &quot;PBI in Platinum&quot;, &quot;PBI in Silver&quot;, &quot;Constant&quot;),
+          covariate.labels = c(&quot;Challenger WR&quot;, &quot;Diamond WR&quot;, &quot;Emerald WR&quot;, &quot;Grandmaster WR&quot;, &quot;Gold WR&quot;, &quot;Iron WR&quot;, &quot;Master WR&quot;, &quot;Platinum WR&quot;, &quot;Silver WR&quot;, &quot;PBI&quot;, &quot;# of Games&quot;, &quot;PBI * Challenger&quot;, &quot;PBI * Diamond&quot;, &quot;PBI * Emerald&quot;, &quot;PBI * Grandmaster&quot;, &quot;PBI * Gold&quot;, &quot;PBI * Iron&quot;, &quot;PBI * Master&quot;, &quot;PBI * Platinum&quot;, &quot;PBI * Silver&quot;, &quot;Constant&quot;),
           add.lines=list(c(&quot;Rank Interaction&quot;, &quot;No&quot;, &quot;Yes&quot;, &quot;Yes&quot;)),
           notes= &quot;*Reference Group is Bronze Rank*&quot;,
           out=&quot;league.html&quot;
@@ -588,31 +588,31 @@ stargazer(ols1, ols3, ols2,
 ## # of Games                -0.00000               0.00000***                 0.00000***        
 ##                          (0.00000)               (0.00000)                  (0.00000)         
 ##                                                                                               
-## PBI in Challenger                                 0.460***                   0.689***         
+## PBI * Challenger                                  0.460***                   0.689***         
 ##                                                   (0.081)                    (0.105)          
 ##                                                                                               
-## PBI in Diamond                                    0.610***                   0.566***         
+## PBI * Diamond                                     0.610***                   0.566***         
 ##                                                   (0.075)                    (0.072)          
 ##                                                                                               
-## PBI in Emerald                                    0.426***                   0.397***         
+## PBI * Emerald                                     0.426***                   0.397***         
 ##                                                   (0.058)                    (0.053)          
 ##                                                                                               
-## PBI in Grandmaster                                0.290***                   0.373***         
+## PBI * Grandmaster                                 0.290***                   0.373***         
 ##                                                   (0.068)                    (0.058)          
 ##                                                                                               
-## PBI in Gold                                       0.273***                   0.251***         
+## PBI * Gold                                        0.273***                   0.251***         
 ##                                                   (0.055)                    (0.050)          
 ##                                                                                               
-## PBI in Iron                                        -0.131                     -0.119          
+## PBI * Iron                                         -0.131                     -0.119          
 ##                                                   (0.115)                    (0.133)          
 ##                                                                                               
-## PBI in Master                                     0.344***                   0.359***         
+## PBI * Master                                      0.344***                   0.359***         
 ##                                                   (0.059)                    (0.054)          
 ##                                                                                               
-## PBI in Platinum                                   0.291***                   0.268***         
+## PBI * Platinum                                    0.291***                   0.268***         
 ##                                                   (0.055)                    (0.050)          
 ##                                                                                               
-## PBI in Silver                                     0.268***                   0.247***         
+## PBI * Silver                                      0.268***                   0.247***         
 ##                                                   (0.055)                    (0.050)          
 ##                                                                                               
 ## Constant                 50.257***               46.814***                  46.886***         

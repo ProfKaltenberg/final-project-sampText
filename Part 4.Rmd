@@ -68,7 +68,7 @@ stargazer(ols1, ols3, ols2,
           column.labels = c("OLS", "Across Every Lane", "Top Lane Only"),
           model.names = FALSE,
           dep.var.caption = "",
-          covariate.labels = c("Challenger WR", "Diamond WR", "Emerald WR", "Grandmaster WR", "Gold WR", "Iron WR", "Master WR", "Platinum WR", "Silver WR", "PBI", "# of Games", "PBI in Challenger", "PBI in Diamond", "PBI in Emerald", "PBI in Grandmaster", "PBI in Gold", "PBI in Iron", "PBI in Master", "PBI in Platinum", "PBI in Silver", "Constant"),
+          covariate.labels = c("Challenger WR", "Diamond WR", "Emerald WR", "Grandmaster WR", "Gold WR", "Iron WR", "Master WR", "Platinum WR", "Silver WR", "PBI", "# of Games", "PBI * Challenger", "PBI * Diamond", "PBI * Emerald", "PBI * Grandmaster", "PBI * Gold", "PBI * Iron", "PBI * Master", "PBI * Platinum", "PBI * Silver", "Constant"),
           add.lines=list(c("Rank Interaction", "No", "Yes", "Yes")),
           notes= "*Reference Group is Bronze Rank*",
           out="league.html"
