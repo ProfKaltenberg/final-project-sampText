@@ -537,105 +537,138 @@ rob_se=list(
 
 stargazer(ols1, ols3, ols2,
           se=rob_se,
-          type = &quot;html&quot;,  
+          type = &quot;text&quot;,  
           title = &quot;The Effect of PBI on Win Rate Across Ranks&quot;, 
           dep.var.labels = &quot;Win Rate&quot;, 
-          column.labels = c(&quot;OLS&quot;, &quot;Across Every Role&quot;, &quot;Top Lane Only&quot;),
+          column.labels = c(&quot;OLS&quot;, &quot;Across Every Lane&quot;, &quot;Top Lane Only&quot;),
           model.names = FALSE,
+          dep.var.caption = &quot;&quot;,
+          covariate.labels = c(&quot;Challenger WR&quot;, &quot;Diamond WR&quot;, &quot;Emerald WR&quot;, &quot;Grandmaster WR&quot;, &quot;Gold WR&quot;, &quot;Iron WR&quot;, &quot;Master WR&quot;, &quot;Platinum WR&quot;, &quot;Silver WR&quot;, &quot;PBI&quot;, &quot;# of Games&quot;, &quot;PBI in Challenger&quot;, &quot;PBI in Diamond&quot;, &quot;PBI in Emerald&quot;, &quot;PBI in Grandmaster&quot;, &quot;PBI in Gold&quot;, &quot;PBI in Iron&quot;, &quot;PBI in Master&quot;, &quot;PBI in Platinum&quot;, &quot;PBI in Silver&quot;, &quot;Constant&quot;),
+          add.lines=list(c(&quot;Rank Interaction&quot;, &quot;No&quot;, &quot;Yes&quot;, &quot;Yes&quot;)),
+          notes= &quot;*Reference Group is Bronze Rank*&quot;,
           out=&quot;league.html&quot;
           )</code></pre>
 <pre><code>## 
-## &lt;table style=&quot;text-align:center&quot;&gt;&lt;caption&gt;&lt;strong&gt;The Effect of PBI on Win Rate Across Ranks&lt;/strong&gt;&lt;/caption&gt;
-## &lt;tr&gt;&lt;td colspan=&quot;4&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td colspan=&quot;3&quot;&gt;&lt;em&gt;Dependent variable:&lt;/em&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td colspan=&quot;3&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td colspan=&quot;3&quot;&gt;Win Rate&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;OLS&lt;/td&gt;&lt;td&gt;Across Every Role&lt;/td&gt;&lt;td&gt;Top Lane Only&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;(1)&lt;/td&gt;&lt;td&gt;(2)&lt;/td&gt;&lt;td&gt;(3)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td colspan=&quot;4&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankCHALLENGER&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;8.995&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;9.006&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.295)&lt;/td&gt;&lt;td&gt;(0.311)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankDIAMOND&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;5.795&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;5.744&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.155)&lt;/td&gt;&lt;td&gt;(0.140)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankEMERALD&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;4.321&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;4.276&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.155)&lt;/td&gt;&lt;td&gt;(0.139)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankG.MASTER&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;5.992&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;5.961&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.229)&lt;/td&gt;&lt;td&gt;(0.216)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankGOLD&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;2.596&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;2.556&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.220)&lt;/td&gt;&lt;td&gt;(0.195)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankIRON&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;-5.142&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;-5.213&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.233)&lt;/td&gt;&lt;td&gt;(0.210)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankMASTER&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;4.751&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;4.676&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.170)&lt;/td&gt;&lt;td&gt;(0.159)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankPLATINUM&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;3.365&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;3.290&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.189)&lt;/td&gt;&lt;td&gt;(0.168)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankSILVER&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;1.503&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;1.443&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.221)&lt;/td&gt;&lt;td&gt;(0.199)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;PBIno&lt;/td&gt;&lt;td&gt;0.002&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;-0.273&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;-0.252&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;(0.001)&lt;/td&gt;&lt;td&gt;(0.055)&lt;/td&gt;&lt;td&gt;(0.050)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;games&lt;/td&gt;&lt;td&gt;-0.00000&lt;/td&gt;&lt;td&gt;0.00000&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.00000&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;(0.00000)&lt;/td&gt;&lt;td&gt;(0.00000)&lt;/td&gt;&lt;td&gt;(0.00000)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankCHALLENGER:PBIno&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;0.460&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.689&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.081)&lt;/td&gt;&lt;td&gt;(0.105)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankDIAMOND:PBIno&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;0.610&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.566&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.075)&lt;/td&gt;&lt;td&gt;(0.072)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankEMERALD:PBIno&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;0.426&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.397&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.058)&lt;/td&gt;&lt;td&gt;(0.053)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankG.MASTER:PBIno&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;0.290&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.373&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.068)&lt;/td&gt;&lt;td&gt;(0.058)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankGOLD:PBIno&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;0.273&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.251&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.055)&lt;/td&gt;&lt;td&gt;(0.050)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankIRON:PBIno&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;-0.131&lt;/td&gt;&lt;td&gt;-0.119&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.115)&lt;/td&gt;&lt;td&gt;(0.133)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankMASTER:PBIno&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;0.344&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.359&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.059)&lt;/td&gt;&lt;td&gt;(0.054)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankPLATINUM:PBIno&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;0.291&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.268&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.055)&lt;/td&gt;&lt;td&gt;(0.050)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;rankSILVER:PBIno&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;0.268&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.247&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.055)&lt;/td&gt;&lt;td&gt;(0.050)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Constant&lt;/td&gt;&lt;td&gt;50.257&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;46.814&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;46.886&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;(0.150)&lt;/td&gt;&lt;td&gt;(0.142)&lt;/td&gt;&lt;td&gt;(0.132)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td colspan=&quot;4&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Observations&lt;/td&gt;&lt;td&gt;1,702&lt;/td&gt;&lt;td&gt;1,702&lt;/td&gt;&lt;td&gt;1,309&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.001&lt;/td&gt;&lt;td&gt;0.796&lt;/td&gt;&lt;td&gt;0.829&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Adjusted R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;-0.001&lt;/td&gt;&lt;td&gt;0.794&lt;/td&gt;&lt;td&gt;0.827&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Residual Std. Error&lt;/td&gt;&lt;td&gt;4.245 (df = 1699)&lt;/td&gt;&lt;td&gt;1.927 (df = 1681)&lt;/td&gt;&lt;td&gt;1.777 (df = 1288)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;F Statistic&lt;/td&gt;&lt;td&gt;0.509 (df = 2; 1699)&lt;/td&gt;&lt;td&gt;328.481&lt;sup&gt;***&lt;/sup&gt; (df = 20; 1681)&lt;/td&gt;&lt;td&gt;312.885&lt;sup&gt;***&lt;/sup&gt; (df = 20; 1288)&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td colspan=&quot;4&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/td&gt;&lt;td colspan=&quot;3&quot; style=&quot;text-align:right&quot;&gt;&lt;sup&gt;*&lt;/sup&gt;p&lt;0.1; &lt;sup&gt;**&lt;/sup&gt;p&lt;0.05; &lt;sup&gt;***&lt;/sup&gt;p&lt;0.01&lt;/td&gt;&lt;/tr&gt;
-## &lt;/table&gt;</code></pre>
+## The Effect of PBI on Win Rate Across Ranks
+## ==============================================================================================
+##                                                      Win Rate                                 
+##                             OLS              Across Every Lane            Top Lane Only       
+##                             (1)                     (2)                        (3)            
+## ----------------------------------------------------------------------------------------------
+## Challenger WR                                     8.995***                   9.006***         
+##                                                   (0.295)                    (0.311)          
+##                                                                                               
+## Diamond WR                                        5.795***                   5.744***         
+##                                                   (0.155)                    (0.140)          
+##                                                                                               
+## Emerald WR                                        4.321***                   4.276***         
+##                                                   (0.155)                    (0.139)          
+##                                                                                               
+## Grandmaster WR                                    5.992***                   5.961***         
+##                                                   (0.229)                    (0.216)          
+##                                                                                               
+## Gold WR                                           2.596***                   2.556***         
+##                                                   (0.220)                    (0.195)          
+##                                                                                               
+## Iron WR                                          -5.142***                  -5.213***         
+##                                                   (0.233)                    (0.210)          
+##                                                                                               
+## Master WR                                         4.751***                   4.676***         
+##                                                   (0.170)                    (0.159)          
+##                                                                                               
+## Platinum WR                                       3.365***                   3.290***         
+##                                                   (0.189)                    (0.168)          
+##                                                                                               
+## Silver WR                                         1.503***                   1.443***         
+##                                                   (0.221)                    (0.199)          
+##                                                                                               
+## PBI                        0.002*                -0.273***                  -0.252***         
+##                           (0.001)                 (0.055)                    (0.050)          
+##                                                                                               
+## # of Games                -0.00000               0.00000***                 0.00000***        
+##                          (0.00000)               (0.00000)                  (0.00000)         
+##                                                                                               
+## PBI in Challenger                                 0.460***                   0.689***         
+##                                                   (0.081)                    (0.105)          
+##                                                                                               
+## PBI in Diamond                                    0.610***                   0.566***         
+##                                                   (0.075)                    (0.072)          
+##                                                                                               
+## PBI in Emerald                                    0.426***                   0.397***         
+##                                                   (0.058)                    (0.053)          
+##                                                                                               
+## PBI in Grandmaster                                0.290***                   0.373***         
+##                                                   (0.068)                    (0.058)          
+##                                                                                               
+## PBI in Gold                                       0.273***                   0.251***         
+##                                                   (0.055)                    (0.050)          
+##                                                                                               
+## PBI in Iron                                        -0.131                     -0.119          
+##                                                   (0.115)                    (0.133)          
+##                                                                                               
+## PBI in Master                                     0.344***                   0.359***         
+##                                                   (0.059)                    (0.054)          
+##                                                                                               
+## PBI in Platinum                                   0.291***                   0.268***         
+##                                                   (0.055)                    (0.050)          
+##                                                                                               
+## PBI in Silver                                     0.268***                   0.247***         
+##                                                   (0.055)                    (0.050)          
+##                                                                                               
+## Constant                 50.257***               46.814***                  46.886***         
+##                           (0.150)                 (0.142)                    (0.132)          
+##                                                                                               
+## ----------------------------------------------------------------------------------------------
+## Rank Interaction             No                     Yes                        Yes            
+## Observations               1,702                   1,702                      1,309           
+## R2                         0.001                   0.796                      0.829           
+## Adjusted R2                -0.001                  0.794                      0.827           
+## Residual Std. Error  4.245 (df = 1699)       1.927 (df = 1681)          1.777 (df = 1288)     
+## F Statistic         0.509 (df = 2; 1699) 328.481*** (df = 20; 1681) 312.885*** (df = 20; 1288)
+## ==============================================================================================
+## Note:                                                              *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01
+##                                                               *Reference Group is Bronze Rank*</code></pre>
 </div>
 <div id="discussion" class="section level2">
 <h2>#6 Discussion</h2>
-<p>The regressions all show the effect of character preference over
-winrate across different ranks. I used interaction terms across each
-rank and my preferred regression controls for the number of games played
-by each character as well as using robust standard errors. What it shows
-is that the strongest effect of PBI on winrate shows itself in the
-diamond rank which falls above the average skill, but is not quite what
-are considered the “apex ranks.” The effect tapers off as ranks go past
-diamond and are much lower the lower rank you are. What this means is
-that the middle of the road ranked players who are not quite at the
-highest ranks are the ones who need to play the most “meta-favored” in
-order to achieve wins. The higher ranks do care, but not as much. The
-lower ranks (especially Iron and Bronze) simply do not care at all.</p>
+<p>These regressions show the effect of meta-preferred characters on win
+rate. My base model (1) simply sees the effect of PBI on win rate
+without considering rank and controlling for the number of games. These
+results are only statistically significant at the 10% level. However my
+most interesting results were from the other two models where I added
+interaction terms with rank and PBI.</p>
+<p>What my second model shows is that the strongest effect of PBI on
+winrate shows itself in the Diamond rank which falls above the average
+skill, but is not quite what are considered the “apex ranks.” The effect
+tapers off as ranks go past Diamond with a slight pick up at the highest
+rank, Challenger. Diamond players are often considered to be the most
+“sweaty.” As in, they care a lot about winning, even moreso than higher
+ranks because they feel like they have something to prove. Therefore
+they may care more about strong character choice so they can progress as
+opposed to someone who has already proven themselves.</p>
+<p>The highest ranking players generally have more mechanical skill as
+well as stronger fundamentals, so they may not need to rely on strong
+character picks as much. This changes at the Challenger rank because it
+is the most exclusive rank (only including the top 300 players in the
+leaderboard). So these players are more compelled to use the strongest
+characters to maintain their standing.</p>
+<p>Ranks below Diamond have progressively weaker effects of PBI, until
+Bronze and Iron where it actually begins to have a negative effect. So
+picking “strong” picks can actually be detrimental in the lowest ranks.
+These are players who have no idea what makes a character strong. They
+may only be using them because they are “strong”, but may also be
+sabotaging themselves by using something too complex for their skill
+level.</p>
+<p>These dynamics completely change as we look at the filtered
+regression, only looking at the top lane. Rather than the effect
+tapering off as ranks increase, there is a consistent increase in
+effect. We see the strongest effect at Challenger. This may be because,
+as of now, there are strong character choices in top lane that are
+almost universally considered to be “broken” (as in, too strong for the
+current metagame). As ranks go up, top lane players know how to abuse
+these “broken” picks that would have a very high PBI. Therefore, they
+would have overall higher win rates with these picks which reflects
+itself in our coefficients.</p>
 </div>
 
 
